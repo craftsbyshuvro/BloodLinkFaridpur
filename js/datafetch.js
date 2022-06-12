@@ -86,6 +86,8 @@ function filterCount(data, criteria, value){
 function setModalDetails(serial){
 
   $("#person_details").hide();
+  $("#pin_field").val(null);
+
 
 
   var user = userList[serial-1];
