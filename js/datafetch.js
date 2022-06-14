@@ -1,6 +1,6 @@
 var API_URL = "https://opensheet.elk.sh/1OikUKYdFw41d98Lja2ueqPNqrnWaJULnplb4UnO8ZZw/1"
 var FILTER_DATA_URL = "https://opensheet.elk.sh/1mahdAussK7HV103sqG-fQl-Jqpd7XxsVr1_fbdpDmDI/1"
-
+var PIN = ""
 
 userList = null;
 all_user_list = null;
@@ -11,6 +11,9 @@ filter_date_url = null;
 fetch(FILTER_DATA_URL)
   .then((res) => res.json())
   .then((result) => {
+    
+    PIN = result[0]['PIN'];
+
     filter_date_url = result;
     districts_html = "";
     districts_html+= "<option selected value=''>--Select--</option>";
@@ -146,7 +149,9 @@ function setModalDetails(serial) {
 function validatePIN() {
   var pin = $("#pin_field").val();
 
-  if (pin == 513333) {
+  console.log(PIN);
+
+  if (pin == PIN) {
       $("#person_details").show();
       $("#pin_verifyMessage").text("Correct PIN!");
   } else {
@@ -174,5 +179,11 @@ function searchDonor() {
 }
 
 function resetSearch(){
+
+  $("#name").val(null);
+  $("#district option:selected").val(null);
+  $("#bg option:selected").val(null);
+  $("#upazila option:selected").val(null);
+
   updateTable(all_user_list);
 }
