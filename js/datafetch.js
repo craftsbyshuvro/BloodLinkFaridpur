@@ -2,6 +2,21 @@ var API_URL = "https://opensheet.elk.sh/1OikUKYdFw41d98Lja2ueqPNqrnWaJULnplb4UnO
 var FILTER_DATA_URL = "https://opensheet.elk.sh/1mahdAussK7HV103sqG-fQl-Jqpd7XxsVr1_fbdpDmDI/1"
 var PIN = ""
 
+var APP_CONFIG_URL = "https://opensheet.elk.sh/1wuZPhwQLzZQwfZv3HniSGIoJJ3W6uRW0_RAfKcroGrE/1"
+
+
+
+
+fetch(APP_CONFIG_URL)
+.then((res) => res.json())
+    .then((result) => {
+      PIN = result[0]['pin'];
+});
+
+
+
+
+
 userList = null;
 all_user_list = null;
 
@@ -12,8 +27,6 @@ fetch(FILTER_DATA_URL)
   .then((res) => res.json())
   .then((result) => {
     
-    PIN = result[0]['PIN'];
-
     filter_date_url = result;
     districts_html = "";
     districts_html+= "<option selected value=''>--Select--</option>";
@@ -23,6 +36,13 @@ fetch(FILTER_DATA_URL)
 
 
     $.each(result, function(index, value) {
+
+
+
+      if(value['বর্তমান জেলা - Current District'] == '' || value['বর্তমান জেলা - Current District'] == null){
+        return;
+      }
+
       district = "<option value="+value['বর্তমান জেলা - Current District']+">"+value['বর্তমান জেলা - Current District']+"</option>";
       districts_html+=district;
 
@@ -182,4 +202,14 @@ function resetSearch(){
   $("#bg").val(null);
   $("#upazila").val(null);
   updateTable(all_user_list);
+}
+
+$('#search_form').submit(function(e){
+  e.preventDefault();
+  searchDonor();
+});
+
+function logOut(){
+  sessionStorage.clear()
+  window.location.href = "login.html";
 }
