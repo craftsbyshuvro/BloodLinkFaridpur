@@ -16,7 +16,7 @@
 			nextButtonClass: '',
 			previousButtonText: 'Previous',
 			nextButtonText: 'Next',
-			currentPage: 1,
+			currentPage: 1
 		};
 
 		var settings = $.extend({}, defaults, options);
@@ -81,7 +81,7 @@
 				$rows.hide();
 				$rows.slice((from-1), to).show();
 
-				of.innerHTML = from + ' to ' + to + ' of ' + $rows.length + ' donors';
+				of.innerHTML = from + ' to ' + to + ' of ' + $rows.length + ' entries';
 
 				if ($rows.length <= settings.perPage) {
 					$(container).hide();
