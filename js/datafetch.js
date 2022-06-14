@@ -149,8 +149,6 @@ function setModalDetails(serial) {
 function validatePIN() {
   var pin = $("#pin_field").val();
 
-  console.log(PIN);
-
   if (pin == PIN) {
       $("#person_details").show();
       $("#pin_verifyMessage").text("Correct PIN!");
@@ -179,11 +177,9 @@ function searchDonor() {
 }
 
 function resetSearch(){
-
   $("#name").val(null);
-  $("#district option:selected").val(null);
-  $("#bg option:selected").val(null);
-  $("#upazila option:selected").val(null);
-
+  $("#district").val(null);
+  $("#bg").val(null);
+  $("#upazila").val(null);
   updateTable(all_user_list);
 }
