@@ -14,7 +14,7 @@
 
 <body style="background-color:rgb(255, 255, 255);">
 
-    <div class="container-fluid" style="float: right; width: 100%; background-color: antiquewhite;">
+    <div class="container-fluid" style="float: right; width: 100%; background-color: rgb(23, 64, 110);">
         <button onclick="logOut()" id="search" type="button" class="btn btn-danger float-right">Log Out</button>
     </div>
 
@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<div class="card mb-4 shadow p-3 mb-5 bg-white rounded">
+<div class="card mb-4 shadow p-3 mb-5 rounded" style="background-color:snow;">
     <div class="row ml-3 mt-4">
         <div class="col-4">
             <h5 class="text-dark"> 
@@ -46,9 +46,9 @@
             </h5>   
             <h5 class="text-dark">
                 <span style="font-weight: bold;">Male: </span>
-                <span class="badge badge-success" id="total_male"></span> 
+                <span class="badge badge-success mr-4" id="total_male"></span> 
                 
-                <span class="ml-3" style="font-weight: bold;">Female: </span>
+                <span class="ml-4" style="font-weight: bold;">Female: </span>
                 <span class="badge badge-success" id="total_female"></span>
             </h5>      
     
@@ -119,7 +119,7 @@
     
     
                 <div class="row mt-4">
-                    <div class="col-9 offset-3">
+                    <div class="col-9 offset-4">
                         <button onclick="searchDonor()" id="search" type="button" class="btn btn-success mr-1">Search</button>
                         <button onclick="resetSearch()" id="reset_search" type="button" class="btn btn-danger">Reset Search</button>
                     </div>
@@ -200,7 +200,6 @@
       </div>
     </div>
   </div>
-
 
 <script src="https://sheetdb.io/api/js"></script>
 <script src="js/jquery.simplePagination.js"></script>

@@ -2,13 +2,12 @@
         body{
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   background: #1B2631;
 }
 
 .box{
-  width: 420px;
-  padding: 20px;
+  width: 520px;
+  padding: 70px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -18,16 +17,9 @@
   border-radius: 20px 20px;
 }
 .box h1{
-  color: white;
-  text-transform: uppercase;
+  color: rgb(228, 199, 199);
   font-weight: 500*;
-  background: linear-gradient(
-    to right,
-    hsl(1 100% 50%),
-    hsl(100 100% 50%)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
   text-align: center;
 }
 .box input[type = "text"],.box input[type = "password"]{
@@ -63,12 +55,13 @@
   color: white;
   transition: 0.25s;
   cursor: pointer;
+  border-radius: 24px;
 }
 .box input[type = "button"]:focus{
-  border-color: #D4AC0D;
+  border-color: #2247da;
 }
 .box input[type = "button"]:hover{
-  background: #D4AC0D;
+  background: #0d14d4;
   border-radius: 24px;
 }
 
