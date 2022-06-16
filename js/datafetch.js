@@ -46,8 +46,7 @@ fetch(FILTER_DATA_URL)
       district = "<option value="+value['বর্তমান জেলা - Current District']+">"+value['বর্তমান জেলা - Current District']+"</option>";
       districts_html+=district;
 
-      
-      upazila = "<option value="+value['বর্তমান উপজেলা - Current Upazila']+">"+value['বর্তমান উপজেলা - Current Upazila']+"</option>";
+      upazila = "<option value='"+value['বর্তমান উপজেলা - Current Upazila']+"'>"+value['বর্তমান উপজেলা - Current Upazila']+"</option>";
       upazilas_html+=upazila;
   });
 
@@ -180,7 +179,6 @@ function validatePIN() {
 
 
 function searchDonor() {
-
   var name = $("#name").val();
   var district = $("#district option:selected").val();
   var bg = $("#bg option:selected").val();
