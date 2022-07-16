@@ -37,17 +37,14 @@ fetch(FILTER_DATA_URL)
 
     $.each(result, function(index, value) {
 
-
-
-      if(value['বর্তমান জেলা - Current District'] == '' || value['বর্তমান জেলা - Current District'] == null){
-        return;
+      if(value['বর্তমান জেলা - Current District'].length > 0){
+        district = "<option value="+value['বর্তমান জেলা - Current District']+">"+value['বর্তমান জেলা - Current District']+"</option>";
+        districts_html+=district;
       }
-
-      district = "<option value="+value['বর্তমান জেলা - Current District']+">"+value['বর্তমান জেলা - Current District']+"</option>";
-      districts_html+=district;
 
       upazila = "<option value='"+value['বর্তমান উপজেলা - Current Upazila']+"'>"+value['বর্তমান উপজেলা - Current Upazila']+"</option>";
       upazilas_html+=upazila;
+
   });
 
   $("#district").html(districts_html);
